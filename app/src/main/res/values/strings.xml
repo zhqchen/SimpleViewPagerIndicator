@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SimpleViewPagerIndicator</string>
+
+    <string name="indicator_item_1">item1</string>
+    <string name="indicator_item_2">item2</string>
+    <string name="indicator_item_3">item3</string>
+    <string name="indicator_item_4">item4</string>
 </resources>

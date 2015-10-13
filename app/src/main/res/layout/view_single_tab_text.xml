@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView style="@style/indicator_text_style"
+        android:id="@+id/tv_tab_title"/>
+
+    <View style="@style/CommonLineVertical"
+          android:id="@+id/v_vertical_line"
+        android:layout_height="14dp"/>
+
+</merge>

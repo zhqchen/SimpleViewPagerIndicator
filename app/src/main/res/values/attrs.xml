@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IndicatorLayoutView">
+        <attr name="single_tab_background" format="reference"/>
+        <attr name="is_can_vertical_scroll" format="reference|boolean"/>
+        <attr name="single_view_text_size" format="reference|integer" /><!--单个view的提示文本的字体大小(单位sp), 默认是 common_text_size_zd2_pt30-->
+        <attr name="single_view_text_color" format="reference|color" /><!--单个view的提示文本的颜色的id, 默认是 common_text_color_zs2_secondary-->
+        <attr name="single_view_text_highlight_color" format="reference|color" /><!--单个view的提示文本的高亮颜色的id, 默认是 common_text_color_zs5_click-->
+    </declare-styleable>
+</resources>

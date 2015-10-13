@@ -1,3 +1,13 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="common_text_size_sp21">21sp</dimen>
+    <dimen name="common_text_size_sp18">18sp</dimen>
+    <dimen name="common_text_size_sp17">17sp</dimen>
+    <dimen name="common_text_size_sp16">16sp</dimen>
+    <dimen name="common_text_size_sp15">15sp</dimen>
+    <dimen name="common_text_size_sp14">14sp</dimen>
+    <dimen name="common_text_size_sp13">13sp</dimen>
+    <dimen name="common_text_size_sp12">12sp</dimen>
+    <dimen name="common_text_size_sp11">11sp</dimen>
+    <dimen name="common_text_size_sp10">10sp</dimen>
+    <dimen name="common_text_size_sp9">9sp</dimen>
 </resources>

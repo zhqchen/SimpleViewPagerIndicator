@@ -9,22 +9,10 @@
     <color name="theme_material_accent">#ff4081</color>
 
     <color name="white">#ffffff</color>
-    <color name="percent_12_transparent_white">#f0ffffff</color><!--透明度12%白-->
-    <color name="half_transparent_white">#7fffffff</color>
-    <color name="half_transparent_black">#C0000000</color>
-    <color name="percent_30_transparent_black">#4c000000</color><!--透明度70%黑-->
-    <color name="half_transparent_black_more">#80000000</color>
-    <color name="black">#FF000000</color>
-    <color name="dkgray">#FF444444</color>
-    <color name="gray">#FF888888</color>
-    <color name="ltgray">#FFCCCCCC</color>
-    <color name="red">#FFFF0000</color>
-    <color name="green">#FF00FF00</color>
-    <color name="blue">#FF0000FF</color>
-    <color name="yellow">#FFFFFF00</color>
-    <color name="cyan">#FF00FFFF</color>
-    <color name="list_item">#F0F0F0</color>
-    <color name="magenta">#FFFF00FF</color>
-    <color name="transparent">@android:color/transparent</color>
+    <color name="common_text_color_zs1_primary">#3f3f3f</color>
+    <color name="common_text_color_zs2_secondary">#9a9a9a</color>
+    <color name="common_background_v2">#edf0f2</color>
+
+    <color name="common_bg_line_1px">#dce1e8</color>
 
 </resources>
