@@ -17,10 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 ```
-2. 界面Activity需继承BaseIndicatorActivity，indicator滑动逻辑在BaseIndicatorActivity中封装实现:
-```
-    SimpleViewPagerActivity extends BaseIndicatorActivity 
-```
+2. 界面Activity需继承BaseIndicatorActivity，indicator滑动逻辑在BaseIndicatorActivity中封装实现。
 
 3. IndicatorTopView绑定ViewPager，其中FragmentArrayPagerAdapter需要实现getPageTitle()，以便IndicatorTopView获取Tab提示文本：
 ```
