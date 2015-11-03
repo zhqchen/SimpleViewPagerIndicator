@@ -1,12 +1,14 @@
 # SimpleViewPagerIndicator
-轻量级的ViewPagerIndicator，目前仅支持Tab项平分屏幕宽度的item的滑动。
+轻量级的ViewPagerIndicator，目前仅支持Tab项平分屏幕宽度的item的滑动，包括文本提示栏样式和图标提示栏样式。
 
 ##IndicatorTopView配置项：
 ```
     single_tab_background: 每个Tab项的背景，drawable or color，如：R.drawable.**
-    single_view_text_size: 单个Tab的提示文本的字体大小(单位sp)， 如：16
+    single_view_text_size: int型, 单个Tab的提示文本的字体大小(单位sp)， 如：16
     single_view_text_color: 单个Tab的提示文本的默认颜色的id，如R.color.gray
     single_view_text_highlight_color: 单个Tab的提示文本的高亮颜色的id，如R.color.white
+    indicator_scroll_line_color: 滑动指示线的颜色的id, 默认是 R.color.white
+    indicator_scroll_line_height: 滑动指示线的高度, 默认是 2dp
 ```
 
 ##用法
@@ -22,7 +24,7 @@
     SimpleViewPagerActivity extends BaseIndicatorActivity
 ```
 
-3. IndicatorTopView绑定ViewPager，其中FragmentArrayPagerAdapter需要实现getPageTitle()，以便IndicatorTopView获取Tab提示文本：
+3. IndicatorTopView绑定ViewPager，其中FragmentArrayPagerAdapter需要实现getPageTitle()，getIconResId()和getCount()接口，以便IndicatorTopView获取Tab提示文本：
 ```
     @Override
     public CharSequence getPageTitle(int position) {
@@ -53,7 +55,12 @@
        
        public class SimpleViewPagerActivity extends BaseIndicatorActivity {
        
-           private int[] PAGER_TITLE = {R.string.indicator_item_1, R.string.indicator_item_2, R.string.indicator_item_3, R.string.indicator_item_4};
+           private int[] PAGER_TITLES = {
+                   R.string.indicator_item_1,
+                   R.string.indicator_item_2,
+                   R.string.indicator_item_3,
+                   R.string.indicator_item_4
+           };
        
            @InjectView(R.id.vp_main)
            ViewPager mViewPager;
@@ -83,14 +90,12 @@
            }
        
            private void initViewsValue() {
-               mAdapter = new FragmentArrayPagerAdapter(getSupportFragmentManager());
+               mAdapter = new FragmentArrayPagerAdapter(getSupportFragmentManager(), PAGER_TITLES, null);
                for(int i = 0; i < PAGER_TITLE.length; i++) {
                    IndicatorFragment fragment = new IndicatorFragment();
                    mAdapter.add(fragment);
                }
-               mAdapter.setPageTitle(PAGER_TITLE);
                mViewPager.setAdapter(mAdapter);
-               mViewPager.setOffscreenPageLimit(PAGER_TITLE.length - 1);
                indicatorTopView.setViewPager(mViewPager);
        
                indicatorTopView.addOnPageChangeListener(new IndicatorPageChangedListener() {

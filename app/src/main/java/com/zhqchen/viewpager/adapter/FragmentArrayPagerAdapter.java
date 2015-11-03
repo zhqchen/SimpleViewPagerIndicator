@@ -51,6 +51,14 @@ public class FragmentArrayPagerAdapter extends FragmentPagerAdapter implements I
         return SimpleIndicatorApplication.getContext().getResources().getString(pageTitles[position]);
     }
 
+    @Override
+    public int getIconResId(int position) {
+        if(pageTitleIcons == null || pageTitleIcons.length == 0) {
+            return 0;
+        }
+        return pageTitleIcons[position];
+    }
+
     /**
      * Adds the specified fragment at the end of the array.
      * 需要手动notifyDataSetChanged()
@@ -117,11 +125,4 @@ public class FragmentArrayPagerAdapter extends FragmentPagerAdapter implements I
         return POSITION_NONE;
     }
 
-    @Override
-    public int getIconResId(int position) {
-        if(pageTitleIcons == null || pageTitleIcons.length == 0) {
-            return 0;
-        }
-        return pageTitleIcons[position];
-    }
 }
