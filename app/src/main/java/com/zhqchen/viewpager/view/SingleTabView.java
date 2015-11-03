@@ -4,8 +4,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.zhqchen.viewpager.R;
@@ -16,9 +16,10 @@ import com.zhqchen.viewpager.R;
 public class SingleTabView extends LinearLayout {
 
     private TextView tvTabTitle;
-    private View verticalLine;
+    private ImageView ivTitleIcon;
 
     private int index;
+    private int padding = 0;
 
     public SingleTabView(Context context) {
         super(context);
@@ -35,16 +36,21 @@ public class SingleTabView extends LinearLayout {
     private void initLayout() {
         LayoutParams params = new LayoutParams(0 , ViewGroup.LayoutParams.WRAP_CONTENT, 1);
         setLayoutParams(params);//必须要先配置param
-
-        setOrientation(HORIZONTAL);
+        int padding = getContext().getResources().getDimensionPixelSize(R.dimen.tab_view_inner_padding);
+        setPadding(0, padding, 0, padding);
+        setOrientation(VERTICAL);
         setGravity(Gravity.CENTER);
 
-        verticalLine = findViewById(R.id.v_vertical_line);
         tvTabTitle = (TextView) findViewById(R.id.tv_tab_title);
+        ivTitleIcon = (ImageView) findViewById(R.id.iv_title_icon);
     }
 
     public TextView getTvTabTitle() {
         return tvTabTitle;
+    }
+
+    public ImageView getIvTitleIcon() {
+        return ivTitleIcon;
     }
 
     public int getIndex() {
@@ -55,7 +61,4 @@ public class SingleTabView extends LinearLayout {
         this.index = index;
     }
 
-    public View getVerticalLine() {
-        return verticalLine;
-    }
 }

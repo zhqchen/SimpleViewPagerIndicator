@@ -5,18 +5,20 @@
     <application
         android:allowBackup="true"
         android:name=".SimpleIndicatorApplication"
+        android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
-        android:theme="@style/AppTheme"
-        android:label="@string/app_name" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.zhqchen.viewpager.ui.SimpleViewPagerActivity"
-            android:label="@string/app_name" >
+            android:name="com.zhqchen.viewpager.ui.MainChooseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.TitleViewPagerActivity"/>
+        <activity android:name=".ui.IconsViewPagerActivity"/>
     </application>
 
 </manifest>

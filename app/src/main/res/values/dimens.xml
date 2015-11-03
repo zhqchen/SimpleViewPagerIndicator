@@ -10,4 +10,8 @@
     <dimen name="common_text_size_sp11">11sp</dimen>
     <dimen name="common_text_size_sp10">10sp</dimen>
     <dimen name="common_text_size_sp9">9sp</dimen>
+
+    <dimen name="tab_view_inner_padding">10dp</dimen>
+    <dimen name="indicator_scroll_line_height">2dp</dimen>
+
 </resources>

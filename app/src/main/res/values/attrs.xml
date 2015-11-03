@@ -3,8 +3,10 @@
     <declare-styleable name="IndicatorLayoutView">
         <attr name="single_tab_background" format="reference"/>
         <attr name="is_can_vertical_scroll" format="reference|boolean"/>
-        <attr name="single_view_text_size" format="reference|integer" /><!--单个view的提示文本的字体大小(单位sp), 默认是 common_text_size_zd2_pt30-->
-        <attr name="single_view_text_color" format="reference|color" /><!--单个view的提示文本的颜色的id, 默认是 common_text_color_zs2_secondary-->
-        <attr name="single_view_text_highlight_color" format="reference|color" /><!--单个view的提示文本的高亮颜色的id, 默认是 common_text_color_zs5_click-->
+        <attr name="single_view_text_size" format="reference|integer" /><!--单个view的提示文本的字体大小(单位sp), 默认是 common_text_size_zd2_pt30()-->
+        <attr name="single_view_text_color" format="reference|color" /><!--单个view的提示文本的颜色的id, 默认是 R.color.common_text_color_zs2_secondary-->
+        <attr name="single_view_text_highlight_color" format="reference|color" /><!--单个view的提示文本的高亮颜色的id, 默认是 R.color.common_text_color_zs5_click-->
+        <attr name="indicator_scroll_line_color" format="reference|color" /><!--滑动指示线的颜色的id, 默认是 R.color.white-->
+        <attr name="indicator_scroll_line_height" format="reference|dimension" /><!--滑动指示线的高度, 默认是 2dp-->
     </declare-styleable>
 </resources>

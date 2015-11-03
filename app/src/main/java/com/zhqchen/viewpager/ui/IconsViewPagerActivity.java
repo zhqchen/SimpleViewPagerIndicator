@@ -10,9 +10,14 @@ import com.zhqchen.viewpager.adapter.FragmentArrayPagerAdapter;
 /**
  * Created by zqchen
  */
-public class SimpleViewPagerActivity extends BaseIndicatorActivity {
+public class IconsViewPagerActivity extends BaseIndicatorActivity {
 
-    private int[] PAGER_TITLE = {R.string.indicator_item_1, R.string.indicator_item_2, R.string.indicator_item_3, R.string.indicator_item_4};
+    private int[] PAGER_ICONS = {
+            R.mipmap.ic_work_white_24dp,
+            R.mipmap.ic_grade_white_24dp,
+            R.mipmap.ic_hourglass_empty_white_24dp,
+            R.mipmap.ic_alarm_white_24dp
+    };
 
     @InjectView(R.id.vp_main)
     ViewPager mViewPager;
@@ -28,7 +33,7 @@ public class SimpleViewPagerActivity extends BaseIndicatorActivity {
 
     @Override
     protected int getTabViewCount() {
-        return PAGER_TITLE.length;
+        return PAGER_ICONS.length;
     }
 
     @Override
@@ -42,15 +47,13 @@ public class SimpleViewPagerActivity extends BaseIndicatorActivity {
     }
 
     private void initViewsValue() {
-        mAdapter = new FragmentArrayPagerAdapter(getSupportFragmentManager());
-        for(int i = 0; i < PAGER_TITLE.length; i++) {
+        mAdapter = new FragmentArrayPagerAdapter(getSupportFragmentManager(), null, PAGER_ICONS);
+        for(int i = 0; i < PAGER_ICONS.length; i++) {
             IndicatorFragment fragment = new IndicatorFragment();
             mAdapter.add(fragment);
         }
-        mAdapter.setPageTitle(PAGER_TITLE);
         mViewPager.setAdapter(mAdapter);
-        mViewPager.setOffscreenPageLimit(PAGER_TITLE.length - 1);
-        indicatorTopView.setViewPager(mViewPager);
+        indicatorTopView.setViewPager(mViewPager, PAGER_ICONS.length);
 
         indicatorTopView.addOnPageChangeListener(new IndicatorPageChangedListener() {
 

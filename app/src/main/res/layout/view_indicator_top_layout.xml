@@ -5,13 +5,14 @@
         android:id="@+id/ll_tip_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
     </LinearLayout>
 
     <include
         layout="@layout/view_include_underline_indicator"
         android:id="@+id/ll_line_indicator"
-        android:layout_height="2dip"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_alignBottom="@id/ll_tip_header"/>
 
