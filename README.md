@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 ```
+
 2. 界面Activity需继承BaseIndicatorActivity，indicator滑动逻辑在BaseIndicatorActivity中封装实现:
 ```
     SimpleViewPagerActivity extends BaseIndicatorActivity
@@ -119,13 +120,27 @@
     import java.util.List;
     
     @SuppressWarnings("UnusedDeclaration")
-    public class FragmentArrayPagerAdapter extends FragmentPagerAdapter {
+    public class FragmentArrayPagerAdapter extends FragmentPagerAdapter implements IconTabAdapter {
         private List<Fragment> mItems = new ArrayList<>();
     
-        private int[] pageTitle;
+        private int[] pageTitles;
+    
+        private int[] pageTitleIcons;
     
         public FragmentArrayPagerAdapter(FragmentManager fm) {
             super(fm);
+        }
+    
+        /**
+         * 构造
+         * @param fm
+         * @param pageTitles 文本资源id数组，可为null
+         * @param pageTitleIcons 图标资源id数组， 可为null
+         */
+        public FragmentArrayPagerAdapter(FragmentManager fm, int[] pageTitles, int[] pageTitleIcons) {
+            super(fm);
+            this.pageTitles = pageTitles;
+            this.pageTitleIcons = pageTitleIcons;
         }
     
         @Override
@@ -140,11 +155,18 @@
     
         @Override
         public CharSequence getPageTitle(int position) {
-            return SimpleIndicatorApplication.getContext().getResources().getString(pageTitle[position]);
+            if(pageTitles == null || pageTitles.length == 0) {
+                return null;
+            }
+            return SimpleIndicatorApplication.getContext().getResources().getString(pageTitles[position]);
         }
     
-        public void setPageTitle(int[] title) {
-            pageTitle = title;
+        @Override
+        public int getIconResId(int position) {
+            if(pageTitleIcons == null || pageTitleIcons.length == 0) {
+                return 0;
+            }
+            return pageTitleIcons[position];
         }
     
         /**
@@ -212,5 +234,6 @@
         public int getItemPosition(Object object) {
             return POSITION_NONE;
         }
+    
     }
 ```
